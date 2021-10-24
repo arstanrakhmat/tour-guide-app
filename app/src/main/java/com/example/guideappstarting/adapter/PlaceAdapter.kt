@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.guideappstarting.dataclass.Place
 import com.example.guideappstarting.R
@@ -31,17 +32,17 @@ class PlaceAdapter(var list: List<Place>): RecyclerView.Adapter<PlaceAdapter.Vie
     }
 
     override fun onBindViewHolder(holder: PlaceAdapter.ViewHolder, position: Int) {
-        var isVisible = false
 
         val onePlace = list[position]
         holder.itemTitle.text = onePlace.title
         holder.itemDetail.text = onePlace.detail
         holder.itemImage.setImageResource(onePlace.image)
 
+        val isVisible : Boolean = onePlace.visibility
         holder.expandableLayout.visibility = if (isVisible) View.VISIBLE else View.GONE
 
         holder.moreDetail.setOnClickListener {
-            isVisible = true
+            onePlace.visibility = !onePlace.visibility
             notifyItemChanged(position)
         }
     }
@@ -51,7 +52,7 @@ class PlaceAdapter(var list: List<Place>): RecyclerView.Adapter<PlaceAdapter.Vie
         var itemTitle: TextView
         var itemDetail: TextView
         var moreDetail: ImageView
-        var expandableLayout : RelativeLayout
+        var expandableLayout : ConstraintLayout
 
         init {
             itemImage = itemView.findViewById(R.id.item_image)

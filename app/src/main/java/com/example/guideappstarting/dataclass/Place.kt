@@ -4,4 +4,5 @@ data class Place(
     val image: Int,
     val title: String,
     val detail: String,
+    var visibility: Boolean = false
 )
