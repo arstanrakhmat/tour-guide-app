@@ -13,12 +13,6 @@ import com.example.guideappstarting.R
 
 class PlaceAdapter(var list: List<Place>): RecyclerView.Adapter<PlaceAdapter.ViewHolder>() {
 
-//    private var titles = arrayOf("Monument One", "Monument Two", "Monument Three")
-//
-//    private var details = arrayOf("Monument one detail", "Monument two detail", "Monument three detail")
-//
-//    private var images = intArrayOf(R.drawable.monuments1, R.drawable.monuments2, R.drawable.monuments3)
-
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -37,6 +31,9 @@ class PlaceAdapter(var list: List<Place>): RecyclerView.Adapter<PlaceAdapter.Vie
         holder.itemTitle.text = onePlace.title
         holder.itemDetail.text = onePlace.detail
         holder.itemImage.setImageResource(onePlace.image)
+        holder.texts.text = onePlace.text
+        holder.location.text = onePlace.location
+        holder.phoneNumber.text = onePlace.phoneNumber
 
         val isVisible : Boolean = onePlace.visibility
         holder.expandableLayout.visibility = if (isVisible) View.VISIBLE else View.GONE
@@ -51,6 +48,9 @@ class PlaceAdapter(var list: List<Place>): RecyclerView.Adapter<PlaceAdapter.Vie
         var itemImage: ImageView
         var itemTitle: TextView
         var itemDetail: TextView
+        var texts: TextView
+        val location: TextView
+        val phoneNumber: TextView
         var moreDetail: ImageView
         var expandableLayout : ConstraintLayout
 
@@ -60,6 +60,9 @@ class PlaceAdapter(var list: List<Place>): RecyclerView.Adapter<PlaceAdapter.Vie
             itemDetail = itemView.findViewById(R.id.item_detail)
             moreDetail = itemView.findViewById(R.id.more_info_bar)
             expandableLayout = itemView.findViewById(R.id.expandable_layout)
+            texts = itemView.findViewById(R.id.info)
+            location = itemView.findViewById(R.id.location)
+            phoneNumber = itemView.findViewById(R.id.phoneNumber)
         }
     }
 }
