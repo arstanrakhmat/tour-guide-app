@@ -8,4 +8,5 @@ data class Place(
     val text: String,
     val location: String,
     val phoneNumber: String
+
 )
