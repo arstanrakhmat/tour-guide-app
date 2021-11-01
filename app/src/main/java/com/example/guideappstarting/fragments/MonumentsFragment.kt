@@ -51,11 +51,11 @@ class MonumentsFragment : Fragment() {
 
         val listInfo = mutableListOf(
             Place(R.drawable.monuments1, "Memorial Monument", "Uch-Korgon village", false, monument1,
-                "Uch-Korgon", "+996771677010"),
+                "Дадабаева 91, 91, Уч-Коргон"),
             Place(R.drawable.monuments2, "Manas", "Kyzyl-Kiya", false, monument2,
-                "Uch-Korgon", "+996771677010"),
+                "1600 Amphitheatre Parkway, Mountain+View, California"),
             Place(R.drawable.monuments2, "Miner's Labor", "Kyzyl-Kiya", false, monument3,
-                "Uch-Korgon", "+996771677010")
+                "Мэрия города Кызыл-Кия")
         )
         val adapter = PlaceAdapter(listInfo)
 

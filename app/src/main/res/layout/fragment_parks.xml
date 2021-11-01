@@ -5,11 +5,14 @@
     android:layout_height="match_parent"
     tools:context=".fragments.ParksFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Parks Fragment"
-        android:textSize="35sp" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/park_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        />
 
 </RelativeLayout>

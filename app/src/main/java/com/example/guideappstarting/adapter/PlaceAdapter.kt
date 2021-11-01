@@ -45,9 +45,10 @@ class PlaceAdapter(var list: List<Place>): RecyclerView.Adapter<PlaceAdapter.Vie
             notifyItemChanged(position)
         }
 
+        val locationString: String = holder.location.text.toString()
         holder.location.setOnClickListener {
             val gmmIntentUri =
-                Uri.parse("geo:0,0?q=1600 Amphitheatre Parkway, Mountain+View, California")
+                Uri.parse("geo:0,0?q=$locationString")
             val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
             mapIntent.setPackage("com.google.android.apps.maps")
             it.context.startActivity(mapIntent)
